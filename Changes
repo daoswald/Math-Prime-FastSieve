@@ -1,0 +1,23 @@
+Revision history for Perl extension Math::Prime::FastSieve.
+0.04  Wed Dec 14 21:33:00 2011
+    - Listed Inline::MakeMaker as both a BUILD_REQUIRES and a
+      CONFIG_REQUIRES so that the various installation tools (cpan, cpanm,
+      cpanplus) pull in the module prior to running Makefile.PL.
+    - Documentation improvements.
+    - Added a few more tests.
+    - Set minimum Perl version to 5.6.0.  If this causes smoke test failures
+      I will revert to 5.8.0 again.
+0.03  Tue Dec 13 15:17:00 2011
+    - Revisions to the documentation.
+    - Listed Inline as a build dependency in an effort to get better
+      successful install rate, particularly among people who haven't
+      already installed Inline.  This should deal with the issue that
+      Inline::MakeMaker isn't found, causing Makefile.PL to abort.
+    - Added ranged_primes() method.
+    - Added tests for ranged_primes method.
+0.02  Sun Dec 11 23:46:00 2011
+    - Fixed minimum Perl version: was 5.14.2.  Now 5.8.0.
+0.01  Sat Dec 10 00:10:33 2011
+    - original version; created by h2xs 1.23 with options
+        -PAXn Math::Prime::FastSieve
+
