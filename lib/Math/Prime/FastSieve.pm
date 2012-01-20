@@ -9,7 +9,7 @@ use base 'Exporter';
 our @ISA = qw(Exporter);
 
 
-our @EXPORT_OK = qw( primes ); # We can export primes().
+our @EXPORT_OK = qw( primes safe_primes ); # We can export primes().
 
 our @EXPORT    = qw(        ); # Export nothing by default.
 
@@ -25,9 +25,6 @@ use Inline CPP      => 'DATA',
 
 
 1;
-
-
-__DATA__
 
 =head1 NAME
 
@@ -474,6 +471,7 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
+__DATA__
 
 __CPP__
 
@@ -616,7 +614,7 @@ int Sieve::nearest_le( int n )
 // Find the nearest prime greater than or equal to n.  Very fast.
 int Sieve::nearest_ge( int n )
 {
-    if( n > max_n ) return 0;  // Bounds checking.
+    if( n > max_n ) return 0;           // Bounds checking.
     if( n <= 2 ) return 2;              // 2 is only even prime.
     if( ! ( n % 2 ) ) n++;              // Start with an odd number.
     while( n <= max_n )
@@ -674,6 +672,7 @@ int Sieve::count_le( int n )
  * prime numbers less than or equal to search_to.
  */
 
+
 SV* primes( int search_to )
 {
     AV* av = newAV();
@@ -690,3 +689,4 @@ SV* primes( int search_to )
         if( ! primes[i] ) av_push( av, newSViv(i) );
     return newRV_noinc( (SV*) av );
 }
+
