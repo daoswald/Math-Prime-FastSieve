@@ -4,7 +4,6 @@ use warnings;
 
 use Test::More;
 use Math::Prime::FastSieve;
-use Data::Dumper;
 
 ok(1);
 
@@ -211,6 +210,31 @@ note "Testing \$sieve->count_sieve()";
     }
 }
 
+note "Testing \$sieve->count_le()";
+{
+    my %test_data = (
+        -3  => 0,
+        -1  => 0,
+        0   => 0,
+        1   => 0,
+        2   => 1,
+        3   => 2,
+        4   => 2,
+        5   => 3,
+        18  => 7,
+        19  => 8,
+        20  => 8,
+    );
+    foreach my $param( sort { $a <=> $b } keys %test_data ) {
+        my $expect = $test_data{ $param };
+        is(
+            $sieve->count_le( $param ),
+            $expect,
+            "\$sieve->count_le( $param ): Accurate count of $expect "
+        );
+    }
+}
+
 note "Testing \$sieve->nth_prime().";
 {
     my %test_data = (
@@ -233,6 +257,5 @@ note "Testing \$sieve->nth_prime().";
         );
     }
 }
-
 
 done_testing();

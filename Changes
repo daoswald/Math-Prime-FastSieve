@@ -1,4 +1,10 @@
 Revision history for Perl extension Math::Prime::FastSieve.
+0.05  Sat Jan 20 01:37:00 PST 2011
+    - Repaired test suite (mistakenly omitted from previous distribution).
+    - Converted all C++ subs to type-safe unsigned ints and
+      std::vector<bool>::size_type to eliminate potential for signed
+      roll-over errors.  Note: input params are still signed ints because
+      pure-Perl offers no means of creating an SV containing a UV.
 0.04  Wed Dec 14 21:33:00 2011
     - Listed Inline::MakeMaker as both a BUILD_REQUIRES and a
       CONFIG_REQUIRES so that the various installation tools (cpan, cpanm,
