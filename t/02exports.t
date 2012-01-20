@@ -34,7 +34,7 @@ my %big_tests = (
 
 
 # Verify that export occurred.
-can_ok( 'main', 'primes', 'safe_primes' );
+can_ok( 'main', 'primes' );
 
 
 # Test known lists of primes.
