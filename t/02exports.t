@@ -3,10 +3,10 @@ use strict;
 use warnings;
 
 use Test::More;
-use Math::Prime::FastSieve qw( primes safe_primes );
+use Math::Prime::FastSieve qw( primes );
 
 my @exports = (
-    [ 'primes',         \&primes      ],
+    [ 'primes',         \&primes      ]
 );
 
 my %small_tests = (
