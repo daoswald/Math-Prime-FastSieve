@@ -1,6 +1,7 @@
 Changes
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 README
 t/00load.t
 t/01can_subs.t

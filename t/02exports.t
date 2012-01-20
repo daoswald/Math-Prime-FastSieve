@@ -7,7 +7,6 @@ use Math::Prime::FastSieve qw( primes safe_primes );
 
 my @exports = (
     [ 'primes',         \&primes      ],
-    [ 'safe_primes',    \&safe_primes ],
 );
 
 my %small_tests = (
