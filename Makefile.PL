@@ -9,13 +9,6 @@ WriteMakefile(
     PREREQ_PM           =>  {
                                 'Inline::CPP'           => 0.33
                             },
-#   We shouldn't have to require this at build time since it's required at
-#   config time.  If that assertion passes smoke tests we'll removed these
-#   lines...
-#    BUILD_REQUIRES      =>  {
-#                                'ExtUtils::MakeMaker'   => 6.62,
-#                                'Inline::MakeMaker'     => 0.45,
-#                            },
     CONFIGURE_REQUIRES  =>  {
                                 'Inline::MakeMaker'     => 0.45,
                                 'ExtUtils::MakeMaker'   => 6.62,
