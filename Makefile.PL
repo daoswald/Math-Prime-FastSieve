@@ -7,7 +7,7 @@ WriteMakefile(
     ABSTRACT_FROM       =>  'lib/Math/Prime/FastSieve.pm',
     AUTHOR              =>  'David Oswald <daoswald@cpan.org>',
     PREREQ_PM           =>  {
-                                'Inline::CPP'           => 0.33
+                                'Inline::CPP'           => 0.34
                             },
     CONFIGURE_REQUIRES  =>  {
                                 'Inline::MakeMaker'     => 0.45,

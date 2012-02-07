@@ -1,8 +1,13 @@
 Revision history for Perl extension Math::Prime::FastSieve.
-0.06  Sat Jan 20 09:23:00 PST 2011
+0.07  Tue Feb 07 09:39:00 PST 2012
+    - Bump Inline::CPP version requirement to 0.34 to gain broader
+      install success.  Inline::CPP v0.33 was failing for a lot of smokers.
+      V0.34 seems to be much better in that regard, so by requiring that
+      version more smokers will be able to set up M::P::FS.
+0.06  Sat Jan 20 09:23:00 PST 2012
     - Fixed "world writable" directories (that's what I get for preparing
       a distro via Windows.
-0.05  Sat Jan 20 01:37:00 PST 2011
+0.05  Sat Jan 20 01:37:00 PST 2012
     - Repaired test suite (mistakenly omitted from previous distribution).
     - Converted all C++ subs to type-safe unsigned ints and
       std::vector<bool>::size_type to eliminate potential for signed
