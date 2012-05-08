@@ -1,4 +1,7 @@
-Math-Prime-FastSieve version 0.07
+Math-Prime-FastSieve version 0.08
+
+Stable release targeting improved testing, Kwalitee, and Perl::Critic support.
+
 ======================================
 
 This module implements the Sieve of Eratosthenes to find all primes
@@ -17,7 +20,10 @@ This module also provides several other prime numbers related functions.
 
 INSTALLATION
 
-To install this module type the following:
+First, you need a C++ compiler that is compatible with the C compiler used to
+build Perl itself.
+
+Next, to install this module type the following:
 
    perl Makefile.PL
    make
@@ -38,6 +44,9 @@ This module requires these other modules and libraries:
   Inline::C         - Inline::CPP is a subclass of Inline::C.
   Inline            - Inline::CPP and Inline::C plug into Inline.
   Parse::RecDescent - Used to parse the grammar.
+  Test::More        - Core module, used in testing.
+  English           - Core module, used in testing.
+  Perl version 5.006 or later.
 
 COPYRIGHT AND LICENCE
 

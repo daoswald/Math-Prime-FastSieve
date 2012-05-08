@@ -1,4 +1,15 @@
 Revision history for Perl extension Math::Prime::FastSieve.
+
+
+0.08  Tue May 08 00:38:00 PST 2012
+    - Inline::CPP version requirement is now 0.39.
+    - Inline and Inline::C requirement is now v0.50.
+    - Explicit version number requirements for ExtUtils::MakeMaker and
+      Test::More.
+    - MIN_PERL_VERSION meta tag now used instead of 'use 5.006000;' at the top
+      of Makefile.PL.  This is cleaner and nicer.
+    - Added optional RELEASE_TESTING tests for Perl::Critic, Test::Pod,
+      and Test::Pod::Coverage.
 0.07  Tue Feb 07 09:39:00 PST 2012
     - Bump Inline::CPP version requirement to 0.34 to gain broader
       install success.  Inline::CPP v0.33 was failing for a lot of smokers.

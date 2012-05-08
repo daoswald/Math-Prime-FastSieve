@@ -21,7 +21,7 @@ foreach my $sieve_size ( 0, 2, 3, 5, 7, 11, 13, 17, 19, 23 ) {
 
 # Instantiate a bunch of sieve objects.
 my %sieves
-    = map{ $quantities{$_}, new_ok( 'Math::Prime::FastSieve::Sieve', [$_] ) }
+    = map{ ( $quantities{$_}, new_ok( 'Math::Prime::FastSieve::Sieve', [$_] ) ) }
         keys %quantities;
 
 # Verify that the accessor $obj->count_sieve() is binding to the correct

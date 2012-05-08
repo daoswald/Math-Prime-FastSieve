@@ -1,15 +1,17 @@
 ---
-abstract: 'Generate a list of all primes less than or equal'
+abstract: Generate a list of all primes less than or equal
 author:
   - 'David Oswald <daoswald@cpan.org>'
 build_requires:
-  ExtUtils::MakeMaker: 0
+  English: 0
+  ExtUtils::MakeMaker: 6.62
+  Test::More: 0.98
 configure_requires:
   ExtUtils::MakeMaker: 6.62
-  Inline::MakeMaker: 0.45
+  Inline::MakeMaker: 0.50
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.113640'
-license: unknown
+generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120921'
+license: artistic
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -19,6 +21,8 @@ no_index:
     - t
     - inc
 requires:
-  Inline: 0.44
-  Inline::CPP: 0.34
-version: 0.07
+  Inline: 0.50
+  Inline::C: 0.50
+  Inline::CPP: 0.39
+  perl: 5.006000
+version: 0.08

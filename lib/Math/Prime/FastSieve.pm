@@ -4,27 +4,27 @@ use 5.006000;
 use strict;
 use warnings;
 
-use base 'Exporter';
+require Exporter;
 
-our @ISA = qw(Exporter);
+our @ISA = qw(Exporter);    ## no critic (isa)
 
+our @EXPORT_OK = qw( primes safe_primes );    # We can export primes().
 
-our @EXPORT_OK = qw( primes safe_primes ); # We can export primes().
+# our @EXPORT    = qw(        ); # Export nothing by default.
 
-our @EXPORT    = qw(        ); # Export nothing by default.
+our $VERSION = '0.08';
 
-our $VERSION = '0.07';
-
-
-use Inline CPP      => 'DATA',
-           VERSION  => '0.07',
-           NAME     => 'Math::Prime::FastSieve';
+use Inline
+    CPP     => 'DATA',
+    VERSION => '0.08',
+    NAME    => 'Math::Prime::FastSieve';
 
 # No real code here.  Everything is implemented in pure C++ using
 # Inline::CPP.
 
-
 1;
+
+__DATA__
 
 =head1 NAME
 
@@ -39,7 +39,7 @@ facilitates.
 Version 0.06
 
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
 This module provides an optimized implementation of the Sieve of
 Eratosthenes, and uses it to return a reference to an array all primes up to
@@ -56,6 +56,8 @@ extend the range of primes accessible, the fact that this module uses
 a bit-sieve means that primes over a billion are easily within reach
 of most modern systems.
 
+
+=head1 SYNOPSIS
 
     # ----------    The simple (and fastest) interface:    ----------
     use Math::Prime::FastSieve qw( primes );
@@ -383,17 +385,21 @@ the C<primes> method, use C<nearest_ge> to iterate over the list.
 Of course this is slower, but it beats running out of memory doesn't it?
 
 
-=head1 Installation
+=head1 DEPENDENCIES
 
-There is a dependancy: Inline::CPP (Inline C++).  Inline::CPP has
-Inline::C, Inline, and Parse::RecDescent as dependancies.  You also need
-Inline::MakeMaker, which is invoked by Makefile.PL in place of
-ExtUtils::MakeMaker.
+You will need:  L<Inline|Inline>, L<Inline::C|Inline::C> (which is packaged
+with Inline), L<Parse::RecDescent|Parse::RecDescent>,
+L<Inline::MakeMaker|Inline::MakeMaker>,
+L<ExtUtils::MakeMaker|ExtUtils::MakeMaker> (core), and
+L<Test::More|Test::More> (core).
 
-Additionally, your system must have a C++ compiler that is compatible with the
-compiler used to build Perl.  In theory it all these dependancies may sound
-like a big pain.  In practice, most users should be able to install this
-module with the familiar incantations:
+=head1 CONFIGURATION AND ENVIRONMENT
+
+In addition to the module dependencies listed in the previous section, your
+system must have a C++ compiler that is compatible with the compiler used to
+build Perl.  You may need to install one.  While it may sound like there are
+a lot of dependencies and configuration requirements, in practice, most users
+should be able to install this module with the familiar incantations:
 
     cpan Math::Prime::FastSieve
 
@@ -407,11 +413,34 @@ Or download and unpack the tarball, and...
 Using the cpan shell, cpanm, or cpanplus will have the added benefit of
 pulling in and building the dependencies automatically.
 
+=head1 DIAGNOSTICS
+
+If you encounter an installation failure, please email me a transcript of the
+session.
+
+=head1 INCOMPATIBILITIES
+
+This module can only be built using systems that have a C++ compiler, and that
+are able to cleanly install L<Inline::CPP|Inline::CPP>.  That is going to
+cover the majority of potential users.  If you're one of the unlucky few,
+please send me an email.  Since I also maintain Inline::CPP, your feeback
+may help me to sort out the few remaining installation problems with that
+great module.
+
 =head1 AUTHOR
 
 David Oswald, C<< <davido at cpan.org> >>
 
-=head1 BUGS
+=head1 BUGS AND LIMITATIONS
+
+Since the Sieve of Eratosthenes requires one 'bit' per integer in the sieve,
+the memory requirements can be high for large tests.  Additionally, as the
+result set is generated, because Perl's scalars take up a lot more space than
+one bit, it's even more likely the entire result set won't fit into memory.
+
+The OO interface does provide functions that don't build a big huge
+memory-hungry list.
+
 
 Please report any bugs or feature requests to
 C<bug-math-prime-FastSieve at rt.cpan.org>, or through the web interface
@@ -471,7 +500,6 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
-__DATA__
 
 __CPP__
 
