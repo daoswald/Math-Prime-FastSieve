@@ -8,7 +8,7 @@ WriteMakefile(
     NAME                =>  'Math::Prime::FastSieve',
     VERSION_FROM        =>  'lib/Math/Prime/FastSieve.pm',
     ABSTRACT_FROM       =>  'lib/Math/Prime/FastSieve.pm',
-    AUTHOR              =>  'David Oswald <daoswald@cpan.org>',
+    AUTHOR              =>  'David Oswald <davido [@at] cpan [d.o.t] org>',
     LICENSE             =>  'artistic',
     MIN_PERL_VERSION    =>  '5.006000',
     PREREQ_PM           =>  {
