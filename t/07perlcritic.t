@@ -17,4 +17,4 @@ if ( $EVAL_ERROR ) {
     plan( skip_all => $msg );
 }
 
-all_critic_ok( 't', 'lib' );
+all_critic_ok( 'examples', 't', 'lib' );

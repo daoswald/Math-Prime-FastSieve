@@ -1,6 +1,6 @@
-Math-Prime-FastSieve version 0.08
+Math-Prime-FastSieve version 0.09
 
-Stable release targeting improved testing, Kwalitee, and Perl::Critic support.
+Stable release.  Minor POD bugfix, and additional metadata in Makefile.PL.
 
 ======================================
 

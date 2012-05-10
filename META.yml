@@ -1,7 +1,7 @@
 ---
 abstract: Generate a list of all primes less than or equal
 author:
-  - 'David Oswald <daoswald@cpan.org>'
+  - 'David Oswald <davido [@at] cpan [d.o.t] org>'
 build_requires:
   English: 0
   ExtUtils::MakeMaker: 6.62
@@ -20,9 +20,13 @@ no_index:
   directory:
     - t
     - inc
+provides:
+  Math::Prime::FastSieve:
+    file: lib/Math/Prime/FastSieve.pm
+    version: 0.09
 requires:
   Inline: 0.50
   Inline::C: 0.50
   Inline::CPP: 0.39
   perl: 5.006000
-version: 0.08
+version: 0.09
