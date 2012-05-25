@@ -1,6 +1,7 @@
-Math-Prime-FastSieve version 0.09
+Math-Prime-FastSieve version 0.10
 
-Stable release.  Minor POD bugfix, and additional metadata in Makefile.PL.
+Stable release.  Performance enhancements to sieve algorithm.
+EXPERIMENTAL support for long ints.
 
 ======================================
 

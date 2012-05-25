@@ -1,10 +1,28 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
-0.09  Thu May 10 00:18:00 PST 2012
+0.10  Thu May 24 23:48:00 PDT 2012
+    - Added an END{} block with code that will satisfy Inline so that no
+      warnings are generated if M::P::FS is "require"d instead of "use"d.
+      (Issue raised by Dana Jacobsen, patch by Sisyphus -- Thanks all!)
+    - Patched both implementations of the Primes Sieve of Eratosthenes to
+      increment inner loop j+=2 instead of ++j.  This optimization yields a
+      substantial performance increase (in the area of 20-30%) for the
+      exported 'primes()' function, for example. ( Suggestion from
+      Dana Jacobsen ).
+    - Converted all subs to accept longs instead of ints as parameters, as
+      well as to return longs.  That means for Perls compiled with long
+      support, the prime sieve can go past 2.7 billion. ( Again, thanks to
+      Dana Jacobsen for the suggestion.
+    - NOTE: If smoke testing determines that the 'long' support breaks
+      compatibility with 32 bit Perls this particular patch may be rolled
+      back, or may be implemented as a separate function that only compiles
+      into 64 bit Perls.  In this release, 'long' support is experimental.
+
+0.09  Thu May 10 00:18:00 PDT 2012
     - Fixed email address in Makefile.PL.  How did I miss that for so long?
     - Added 'META_MERGE => provides' field to Makefile.PL
 
-0.08  Tue May 08 00:38:00 PST 2012
+0.08  Tue May 08 00:38:00 PDT 2012
     - Inline::CPP version requirement is now 0.39.
     - Inline and Inline::C requirement is now v0.50.
     - Explicit version number requirements for ExtUtils::MakeMaker and
