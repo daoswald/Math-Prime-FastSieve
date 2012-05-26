@@ -1,3 +1,4 @@
+## no critic(RCS,VERSION,interpolation)
 use strict;
 use warnings;
 

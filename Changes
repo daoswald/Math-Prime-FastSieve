@@ -1,5 +1,11 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
+0.10_001 Sat May 26 00:36:00 PDT 2012
+    - Improved type safety (explicitly specify UL and static casting of
+      size_type to UL where it makes sense to do so).
+    - Added proper (modern) C++ class member data initializers.
+    - FastSieve.pm now perlcritic friendly at all severity levels.
+
 0.10  Thu May 24 23:48:00 PDT 2012
     - Added an END{} block with code that will satisfy Inline so that no
       warnings are generated if M::P::FS is "require"d instead of "use"d.
