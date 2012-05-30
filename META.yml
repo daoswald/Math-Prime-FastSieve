@@ -1,5 +1,5 @@
 ---
-abstract: 'Generate a list of all primes less than or equal'
+abstract: Generate a list of all primes less than or equal
 author:
   - 'David Oswald <davido [@at] cpan [d.o.t] org>'
 build_requires:
@@ -23,10 +23,10 @@ no_index:
 provides:
   Math::Prime::FastSieve:
     file: lib/Math/Prime/FastSieve.pm
-    version: 0.09
+    version: 0.12
 requires:
   Inline: 0.50
   Inline::C: 0.50
   Inline::CPP: 0.39
   perl: 5.006000
-version: 0.11
+version: 0.12

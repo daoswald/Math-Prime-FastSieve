@@ -45,9 +45,9 @@
    "provides" : {
       "Math::Prime::FastSieve" : {
          "file" : "lib/Math/Prime/FastSieve.pm",
-         "version" : "0.09"
+         "version" : "0.12"
       }
    },
    "release_status" : "stable",
-   "version" : "0.11"
+   "version" : "0.12"
 }

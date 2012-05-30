@@ -1,8 +1,10 @@
-Math-Prime-FastSieve version 0.11
+Math-Prime-FastSieve version 0.12
 
 Stable release.  Performance enhancements to sieve algorithm.
 Also, the bit sieve only represents odds, which cuts the sieve memory
 footprint in half.
+
+v0.12 fixes some version number inconsistancies.
 
 ======================================
 

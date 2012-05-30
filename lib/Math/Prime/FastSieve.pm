@@ -12,11 +12,11 @@ our @EXPORT_OK = qw( primes primes2 );    # We can export primes().
 
 # our @EXPORT    = qw(        ); # Export nothing by default.
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Inline
     CPP     => 'DATA',
-    VERSION => '0.11',
+    VERSION => '0.12',
     NAME    => 'Math::Prime::FastSieve';
 
 
@@ -45,7 +45,7 @@ facilitates.
 
 =head1 VERSION
 
-Version 0.10
+Version 0.12
 
 
 =head1 DESCRIPTION
@@ -372,7 +372,7 @@ sieve. The only even prime, 2, is handled as a special case.  A bit sieve is
 highly efficient from a memory standpoint because obviously it only consumes
 one byte per eight integers. This sieve is further optimized by reperesenting
 only odd integers in the sieve.  So a sieve from 0 .. 1_000_000_000 only needs
-500_000_000 bits, or 59.6 MB.  
+500_000_000 bits, or 59.6 MB.
 
 So, while a bit sieve was used for memory efficiency, just about every
 other optimization favored reducing time complexity.

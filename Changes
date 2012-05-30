@@ -1,6 +1,10 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
-0.11  Sat May 26 00:36:00 PDT 2012
+0.12  Wed May 30 11:10:00 PDT 2012
+    - Fixed version number consistancy.
+    - Bumped version number to 0.12.
+
+0.11  Wed May 30 00:36:00 PDT 2012
     - Memory and speed performance improvements contributed by Dana Jacobsen:
       Represent only odds in the bit sieve (halving the size).
     - Improved type safety (explicitly specify UL and static casting of
