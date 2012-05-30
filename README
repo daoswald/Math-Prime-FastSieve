@@ -1,7 +1,8 @@
-Math-Prime-FastSieve version 0.10
+Math-Prime-FastSieve version 0.11
 
 Stable release.  Performance enhancements to sieve algorithm.
-EXPERIMENTAL support for long ints.
+Also, the bit sieve only represents odds, which cuts the sieve memory
+footprint in half.
 
 ======================================
 
@@ -14,8 +15,9 @@ Inline::CPP, which itself is a subclass of Inline::C.
 Use this module if you need a list of prime numbers, and need it fast.
 How fast?  Well at the time of writing it is the fastest solution I can
 find on CPAN, including Math::Prime::XS.  And it works all the way up to
-'n' of 2.14 billion.  Because it uses a bit sieve, the result set will
-actually consume more memory than the prime sieve.
+'n' of 2.14 billion (higher if your Perl was compiled with support for longs).
+Because it uses a bit sieve, the result set will actually consume more memory
+than the prime sieve.
 
 This module also provides several other prime numbers related functions.
 
