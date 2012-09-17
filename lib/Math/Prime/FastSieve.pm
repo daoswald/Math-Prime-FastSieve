@@ -582,7 +582,6 @@ class Sieve
 // footprint in half.
 Sieve::Sieve( long n ) :max_n(n), num_primes(0), sieve(n/2+1,0)
 {
-    num_primes = 0UL;
     if( n < 0 ) // Trap negative n's before we start wielding unsigned longs.
         max_n = 0UL;
     else
