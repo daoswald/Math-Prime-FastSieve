@@ -561,7 +561,6 @@ class Sieve
 {
     public:
         Sieve ( long n ); // Constructor. Perl sees "new()".
-        ~Sieve(        ); // Destructor. Seen as "DESTROY()".
         bool isprime( long n ); // Test if n is prime.
         SV*  primes ( long n ); // Return all primes in an aref.
         unsigned long  nearest_le ( long n ); // Return nearest prime <= n.
@@ -574,33 +573,25 @@ class Sieve
     private:
         std::vector<bool>::size_type max_n;
         unsigned long                num_primes;
-        std::vector<bool>*           sieve;
+        std::vector<bool>            sieve;
 };
 
 
 // Set up a primes sieve of 0 .. n inclusive.
 // This sieve has been optimized to only represent odds, cutting memory
 // footprint in half.
-Sieve::Sieve( long n )
+Sieve::Sieve( long n ) :max_n(n), num_primes(0), sieve(n/2+1,0)
 {
-    sieve = new std::vector<bool>( n/2 + 1, 0 );
     num_primes = 0UL;
     if( n < 0 ) // Trap negative n's before we start wielding unsigned longs.
         max_n = 0UL;
     else
     {
-        max_n = n;
         for( std::vector<bool>::size_type i = 3; i * i <= n; i+=2 )
-            if( ! (*sieve)[i/2] )
+            if( ! sieve[i/2] )
                 for( std::vector<bool>::size_type k = i*i; k <= n; k += 2*i)
-                    (*sieve)[k/2] = 1;
+                    sieve[k/2] = 1;
     }
-}
-
-
-// Deallocate memory for primes sieve.
-Sieve::~Sieve() {
-    delete sieve;
 }
 
 
@@ -611,7 +602,7 @@ bool Sieve::isprime( long n )
     if( n < 2 || n > max_n )  return false; // Bounds checking.
     if( n == 2 )              return true;  // 2 is prime.
     if( ! ( n % 2 ) )         return false; // No other evens are prime.
-    if( ! ( (*sieve)[n/2] ) ) return true;  // 0 bit signifies prime.
+    if( ! ( sieve[n/2] ) )    return true;  // 0 bit signifies prime.
     return false;                           // default: not prime.
 }
 
@@ -628,7 +619,7 @@ SV* Sieve::primes( long n )
     av_push( av, newSVuv( 2UL ) );
     num_primes = 1;          // Count 2; it's prime.
     for( std::vector<bool>::size_type i = 3; i <= n; i += 2 )
-        if( ! (*sieve)[i/2] )
+        if( ! sieve[i/2] )
             av_push( av, newSVuv( static_cast<unsigned long>(i) ) );
     return newRV_noinc( (SV*) av );
 }
@@ -650,7 +641,7 @@ SV* Sieve::ranged_primes( long lower, long upper )
     if( lower < 3 ) lower = 3;           // Lower limit cannot < 3.
     if( ( upper - lower ) > 0 && ! ( lower % 2 ) ) lower++;
     for( std::vector<bool>::size_type i = lower; i <= upper; i += 2 )
-        if( ! (*sieve)[i/2] )
+        if( ! sieve[i/2] )
             av_push( av, newSVuv( static_cast<unsigned long>(i) ) );
     return newRV_noinc( (SV*) av );
 }
@@ -667,7 +658,7 @@ unsigned long Sieve::nearest_le( long n )
     // Even numbers map to the next odd number down.
     std::vector<bool>::size_type n_idx = (n-1)/2;  // n_idx >= 1
     do {
-       if( ! (*sieve)[n_idx] )  return static_cast<unsigned long>(2*n_idx+1);
+       if( ! sieve[n_idx] )  return static_cast<unsigned long>(2*n_idx+1);
     } while (--n_idx > 0);
     return 0UL; // We should never get here.
 }
@@ -681,12 +672,12 @@ unsigned long Sieve::nearest_ge( long n )
     // n is negative results in n being treated as a real big unsigned value.
     // Thus we MUST handle negatives before testing max_n.
     if( n <= 2 ) return 2UL;              // 2 is only even prime.
-    n |= 1;                              // Make sure n is odd before check.
+    n |= 1;                               // Make sure n is odd before check.
     if( n > max_n ) return 0UL;           // Bounds checking.
-    std::vector<bool>::size_type n_idx = n/2;
+    std::vector<bool>::size_type n_idx   = n/2;
     std::vector<bool>::size_type max_idx = max_n/2;
     do {
-       if( ! (*sieve)[n_idx] )  return static_cast<unsigned long>(2*n_idx+1);
+       if( ! sieve[n_idx] )  return static_cast<unsigned long>(2*n_idx+1);
     } while (++n_idx < max_idx);
     return 0UL;   // We've run out of sieve to test.
 }
@@ -702,7 +693,7 @@ unsigned long Sieve::nth_prime( long n )
     unsigned long count = 1;
     for( std::vector<bool>::size_type i = 3; i <= max_n; i += 2 )
     {
-        if( ! (* sieve)[i/2] ) count++;
+        if( ! sieve[i/2] ) count++;
         if( count == n ) return static_cast<unsigned long>(i);
     }
     return 0UL;
@@ -726,7 +717,7 @@ unsigned long Sieve::count_le( long n )
     if( n <= 1 || n > max_n ) return 0UL;
     unsigned long count = 1UL;      // 2 is prime. Count it.
     for( std::vector<bool>::size_type i = 3; i <= n; i+=2 )
-        if( !(*sieve)[i/2] ) count++;
+        if( !sieve[i/2] ) count++;
     if( n == max_n && num_primes == 0 ) num_primes = count;
     return count;
 }
