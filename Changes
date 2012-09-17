@@ -1,5 +1,10 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
+0.13  Mon Sep 17 01:39:00 PDT 2012
+    - Switched the sieve member data from explicit dynamic allocation (pointer)
+      to STL-handled allocation (no explicit pointers involved).
+    - Converted constructor to use an initializer list instead of in-body
+      initialization.
 0.12  Wed May 30 11:10:00 PDT 2012
     - Fixed version number consistancy.
     - Bumped version number to 0.12.
