@@ -532,7 +532,6 @@ See http://dev.perl.org/licenses/ for more information.
 __CPP__
 
 #include <vector>
-using namespace std;
 
 /* Class Sieve below.  Perl sees it as a class named
  * "Math::Prime::FastSieve::Sieve".  The constructor is mapped to
@@ -562,7 +561,7 @@ class Sieve
 {
     public:
         Sieve ( long n ); // Constructor. Perl sees "new()".
-        ~Sieve(       ); // Destructor. Seen as "DESTROY()".
+        ~Sieve(        ); // Destructor. Seen as "DESTROY()".
         bool isprime( long n ); // Test if n is prime.
         SV*  primes ( long n ); // Return all primes in an aref.
         unsigned long  nearest_le ( long n ); // Return nearest prime <= n.
@@ -575,7 +574,7 @@ class Sieve
     private:
         std::vector<bool>::size_type max_n;
         unsigned long                num_primes;
-        vector<bool>*                sieve;
+        std::vector<bool>*           sieve;
 };
 
 
@@ -584,7 +583,7 @@ class Sieve
 // footprint in half.
 Sieve::Sieve( long n )
 {
-    std::vector<bool>* primes = new std::vector<bool>( n/2 + 1, 0 );
+    sieve = new std::vector<bool>( n/2 + 1, 0 );
     num_primes = 0UL;
     if( n < 0 ) // Trap negative n's before we start wielding unsigned longs.
         max_n = 0UL;
@@ -592,11 +591,10 @@ Sieve::Sieve( long n )
     {
         max_n = n;
         for( std::vector<bool>::size_type i = 3; i * i <= n; i+=2 )
-            if( ! (*primes)[i/2] )
+            if( ! (*sieve)[i/2] )
                 for( std::vector<bool>::size_type k = i*i; k <= n; k += 2*i)
-                    (*primes)[k/2] = 1;
+                    (*sieve)[k/2] = 1;
     }
-    sieve = primes;
 }
 
 
@@ -762,4 +760,3 @@ SV* primes( long search_to )
             av_push( av, newSVuv( static_cast<unsigned long>( i ) ) );
     return newRV_noinc( (SV*) av );
 }
-
