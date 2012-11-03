@@ -12,7 +12,8 @@ t/05pod.t
 t/06pod_coverage.t
 t/07perlcritic.t
 t/08kwalitee.t
-t/09prime_results.t                      Dana Jacobsen's tests.
+t/09changes.t
+t/10prime_results.t                      Dana Jacobsen's tests.
 lib/Math/Prime/FastSieve.pm
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

@@ -12,9 +12,9 @@ WriteMakefile(
     LICENSE          => 'artistic',
     MIN_PERL_VERSION => '5.006000',
     PREREQ_PM        => {
-        'Inline::CPP' => '0.41',
-        'Inline'      => '0.50',
-        'Inline::C'   => '0.50',
+        'Inline::CPP' => '0.42',
+        'Inline'      => '0.51',
+        'Inline::C'   => '0.51',
     },
     CONFIGURE_REQUIRES => {
         'Inline::MakeMaker'   => '0.50',
@@ -29,8 +29,9 @@ WriteMakefile(
         provides => {
             'Math::Prime::FastSieve' => {
                 file    => 'lib/Math/Prime/FastSieve.pm',
-                version => '0.13'
+                version => '0.14'
             },
         },
     },
 );
+

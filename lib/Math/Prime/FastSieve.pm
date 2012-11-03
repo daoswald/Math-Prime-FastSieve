@@ -12,11 +12,11 @@ our @EXPORT_OK = qw( primes primes2 );    # We can export primes().
 
 # our @EXPORT    = qw(        ); # Export nothing by default.
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 use Inline
     CPP     => 'DATA',
-    VERSION => '0.13',
+    VERSION => '0.14',
     NAME    => 'Math::Prime::FastSieve';
 
 
@@ -45,7 +45,7 @@ facilitates.
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 
 =head1 DESCRIPTION

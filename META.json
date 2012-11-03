@@ -35,9 +35,9 @@
       },
       "runtime" : {
          "requires" : {
-            "Inline" : "0.50",
-            "Inline::C" : "0.50",
-            "Inline::CPP" : "0.41",
+            "Inline" : "0.51",
+            "Inline::C" : "0.51",
+            "Inline::CPP" : "0.42",
             "perl" : "5.006000"
          }
       }
@@ -45,9 +45,9 @@
    "provides" : {
       "Math::Prime::FastSieve" : {
          "file" : "lib/Math/Prime/FastSieve.pm",
-         "version" : "0.13"
+         "version" : "0.14"
       }
    },
    "release_status" : "stable",
-   "version" : "0.13"
+   "version" : "0.14"
 }
