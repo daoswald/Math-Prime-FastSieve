@@ -7,29 +7,6 @@ use Math::Prime::FastSieve;
 
 ok( 1, 'ok(1) should never fail.' );
 
-my %small_tests = (
-    -3 => [],
-    -1 => [],
-    0  => [],
-    1  => [],
-    2  => [2],
-    3  => [ 2, 3 ],
-    4  => [ 2, 3 ],
-    5  => [ 2, 3, 5 ],
-    6  => [ 2, 3, 5 ],
-    7  => [ 2, 3, 5, 7 ],
-    11 => [ 2, 3, 5, 7, 11 ],
-    18 => [ 2, 3, 5, 7, 11, 13, 17 ],
-    19 => [ 2, 3, 5, 7, 11, 13, 17, 19 ],
-    20 => [ 2, 3, 5, 7, 11, 13, 17, 19 ],
-);
-
-my %big_tests = (
-    1000       => 168,
-    5_000_000  => 348_513,
-    50_000_000 => 3_001_134,
-);
-
 # Test a small sieve.
 my $obj_param = 20;
 my $sieve = new_ok( 'Math::Prime::FastSieve::Sieve', [$obj_param] );
@@ -243,6 +220,9 @@ note 'Testing $sieve->nth_prime().';
               . "position ${param} is $expect. "
               . ( !$expect ? '(Out of range.)' : q{} ) );
     }
+    my $sieve2 = Math::Prime::FastSieve::Sieve->new(150000);
+    is( $sieve2->nth_prime(10001), 104743,
+        'nth_prime passes Project Euler #7 test: 10001th prime is 104743.' );
 }
 
 done_testing();
