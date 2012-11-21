@@ -23,10 +23,10 @@ no_index:
 provides:
   Math::Prime::FastSieve:
     file: lib/Math/Prime/FastSieve.pm
-    version: 0.14
+    version: 0
 requires:
   Inline: 0.51
   Inline::C: 0.51
   Inline::CPP: 0.42
   perl: 5.006000
-version: 0.14
+version: 0.15

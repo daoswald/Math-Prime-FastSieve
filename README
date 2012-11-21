@@ -1,11 +1,4 @@
-Math-Prime-FastSieve version 0.14
-
-Stable release.  Performance enhancements to sieve algorithm.
-Also, the bit sieve only represents odds, which cuts the sieve memory
-footprint in half.
-
-v0.13 Minor tweaks to the C++: Better use of initialization lists and STL
-memory management.
+Math-Prime-FastSieve - Fast prime number utilities.
 
 ======================================
 

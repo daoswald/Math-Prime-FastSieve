@@ -83,10 +83,15 @@ note 'Testing $sieve->isprime()';
         if ($expect) {
             ok( $sieve->isprime($param),
                 "\$sieve->isprime( $param ): $param is prime." );
+            ok( $sieve->is_prime($param),
+                "\$sieve->is_prime( $param ) : $param is prime." );
         }
         else {
             ok( !$sieve->isprime($param),
                     "\$sieve->isprime( $param ): $param isn't prime"
+                  . ' or is out of range.' );
+            ok( !$sieve->is_prime($param),
+                    "\$sieve->is_prime( $param ): $param isn't prime"
                   . ' or is out of range.' );
         }
     }
