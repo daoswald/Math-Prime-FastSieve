@@ -1,5 +1,9 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
+0.16 2012-11-23
+  - Fixed a versioning issue that was preventing CPAN indexing.
+  - Minor POD revisions.
+
 0.15 2012-11-20
   - Added a test to the nth_prime tests.
   - is_prime() is now an alias for the isprime() method.

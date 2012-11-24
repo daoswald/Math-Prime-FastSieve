@@ -17,11 +17,11 @@ WriteMakefile(
         'Inline::C'   => '0.51',
     },
     CONFIGURE_REQUIRES => {
-        'Inline::MakeMaker'   => '0.50',
-        'ExtUtils::MakeMaker' => '6.62',
+        'Inline::MakeMaker'   => '0.51',
+        'ExtUtils::MakeMaker' => '6.63',
     },
     BUILD_REQUIRES => {
-        'ExtUtils::MakeMaker' => '6.62',
+        'ExtUtils::MakeMaker' => '6.63',
         'Test::More'          => '0.98',
         'English'             => '0',
     },
@@ -29,6 +29,7 @@ WriteMakefile(
         provides => {
             'Math::Prime::FastSieve' => {
                 file    => 'lib/Math/Prime/FastSieve.pm',
+                version => '0.16',
             },
         },
     },
