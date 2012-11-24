@@ -29,7 +29,7 @@ WriteMakefile(
         provides => {
             'Math::Prime::FastSieve' => {
                 file    => 'lib/Math/Prime/FastSieve.pm',
-                version => '0.16',
+                version => '0.17',
             },
         },
     },
