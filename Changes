@@ -3,6 +3,7 @@ Revision history for Perl extension Math::Prime::FastSieve.
 0.16 2012-11-23
   - Fixed a versioning issue that was preventing CPAN indexing.
   - Minor POD revisions.
+  - Added tests for META.*
 
 0.15 2012-11-20
   - Added a test to the nth_prime tests.

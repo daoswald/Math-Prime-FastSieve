@@ -23,14 +23,14 @@
       "build" : {
          "requires" : {
             "English" : "0",
-            "ExtUtils::MakeMaker" : "6.62",
+            "ExtUtils::MakeMaker" : "6.63",
             "Test::More" : "0.98"
          }
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.62",
-            "Inline::MakeMaker" : "0.50"
+            "ExtUtils::MakeMaker" : "6.63",
+            "Inline::MakeMaker" : "0.51"
          }
       },
       "runtime" : {
@@ -45,9 +45,9 @@
    "provides" : {
       "Math::Prime::FastSieve" : {
          "file" : "lib/Math/Prime/FastSieve.pm",
-         "version" : 0
+         "version" : "0.16"
       }
    },
    "release_status" : "stable",
-   "version" : "0.15"
+   "version" : "0.16"
 }
