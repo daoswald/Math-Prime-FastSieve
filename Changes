@@ -1,5 +1,9 @@
 Revision history for Perl extension Math::Prime::FastSieve.
 
+0.18 2012-12-07
+  - C++ code improvemenets (readability via typedef, pre-increment
+    micro-optimization)
+
 0.17 2012-11-24
   - Fixed #RT81399: count_sieve()'s cached value was being clobbered by calls
     to primes().  Closes #RT81399.
