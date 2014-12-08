@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Inline::MakeMaker;
+use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME             => 'Math::Prime::FastSieve',
@@ -10,27 +10,34 @@ WriteMakefile(
     ABSTRACT_FROM    => 'lib/Math/Prime/FastSieve.pm',
     AUTHOR           => 'David Oswald <davido [@at] cpan [d.o.t] org>',
     LICENSE          => 'artistic',
-    MIN_PERL_VERSION => '5.006000',
+    MIN_PERL_VERSION => '5.008000',
     PREREQ_PM        => {
-        'Inline::CPP' => '0.42',
-        'Inline'      => '0.51',
-        'Inline::C'   => '0.51',
+        'Inline::CPP' => '0.68',
+        'Inline'      => '0.78',
+        'Inline::C'   => '0.67',
+        'Inline::Module' => '0.18',
     },
     CONFIGURE_REQUIRES => {
-        'Inline::MakeMaker'   => '0.51',
-        'ExtUtils::MakeMaker' => '6.63',
+        'ExtUtils::MakeMaker' => '7.04',
     },
     BUILD_REQUIRES => {
-        'ExtUtils::MakeMaker' => '6.63',
-        'Test::More'          => '0.98',
+        'ExtUtils::MakeMaker' => '7.04',
+        'Test::More'          => '1.001009',
         'English'             => '0',
     },
     META_MERGE => {
         provides => {
             'Math::Prime::FastSieve' => {
                 file    => 'lib/Math/Prime/FastSieve.pm',
-                version => '0.18',
+                version => '0.19',
             },
+        },
+    },
+    postamble => {
+        inline => {
+            module => 'Math::Prime::FastSieve',
+            stub   => 'Math::Prime::FastSieve::Inline',
+            ilsm   => 'Inline::CPP',
         },
     },
 );

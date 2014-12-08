@@ -11,12 +11,12 @@ our @ISA = qw(Exporter);    ## no critic (isa)
 our @EXPORT_OK = qw( primes );    # We can export primes().
 our @EXPORT    = qw(        );    # Export nothing by default.
 
-our $VERSION = '0.18';
+our $VERSION = '0.19';
 
-use Inline
-    CPP     => 'DATA',
-    VERSION => '0.18',
-    NAME    => 'Math::Prime::FastSieve';
+use Math::Prime::FastSieve::Inline
+    CPP     => 'DATA';
+#    VERSION => '0.18',
+#    NAME    => 'Math::Prime::FastSieve';
 
 
 # No real code here.  Everything is implemented in pure C++ using
