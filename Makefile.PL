@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 use ExtUtils::MakeMaker;
+use Inline::Module;
 
 WriteMakefile(
     NAME             => 'Math::Prime::FastSieve',
