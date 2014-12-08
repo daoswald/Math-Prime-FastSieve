@@ -25,3 +25,4 @@
 \.yml$
 \.json$
 \.gz$
+lib/Math/Prime/FastSieve/Inline.pm
