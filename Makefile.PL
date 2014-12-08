@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 
+use lib 'inc';
 use ExtUtils::MakeMaker;
 use Inline::Module;
 
