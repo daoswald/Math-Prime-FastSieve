@@ -17,6 +17,7 @@ t/10prime_results.t                      Dana Jacobsen's tests.
 t/11meta.t
 t/12meta_json.t
 t/13synopsis.t
+lib/Alt/Math/Prime/FastSieve/Inline.pm
 lib/Math/Prime/FastSieve.pm
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

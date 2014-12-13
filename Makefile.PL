@@ -7,17 +7,13 @@ use ExtUtils::MakeMaker;
 use Inline::Module;
 
 WriteMakefile(
-    NAME             => 'Math::Prime::FastSieve',
-    VERSION_FROM     => 'lib/Math/Prime/FastSieve.pm',
-    ABSTRACT_FROM    => 'lib/Math/Prime/FastSieve.pm',
+    NAME             => 'Alt::Math::Prime::FastSieve::Inline',
+    VERSION_FROM     => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
+    ABSTRACT_FROM    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
     AUTHOR           => 'David Oswald <davido [@at] cpan [d.o.t] org>',
     LICENSE          => 'artistic',
-    MIN_PERL_VERSION => '5.008000',
+    MIN_PERL_VERSION => '5.008001',
     PREREQ_PM        => {
-        'Inline::CPP' => '0.68',
-        'Inline'      => '0.78',
-        'Inline::C'   => '0.67',
-        'Inline::Module' => '0.18',
     },
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => '7.04',
@@ -26,12 +22,16 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => '7.04',
         'Test::More'          => '1.001009',
         'English'             => '0',
+        'Inline::CPP' => '0.68',
+        'Inline'      => '0.78',
+        'Inline::C'   => '0.67',
+        'Inline::Module' => '0.18',
     },
     META_MERGE => {
         provides => {
-            'Math::Prime::FastSieve' => {
-                file    => 'lib/Math/Prime/FastSieve.pm',
-                version => '0.19',
+            'Alt::Math::Prime::FastSieve::Inline' => {
+                file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
+                version => '0.01',
             },
         },
     },
