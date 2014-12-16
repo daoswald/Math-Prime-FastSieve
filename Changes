@@ -1,7 +1,8 @@
 Revision history for Perl extension Alt::Math::Prime::FastSieve::Inline.
 
 0.02 2014-12-15
-  - Rework meta.
+  - Rework meta for developer-only dependencies.
+  - Fix release tests to work with Inline::Module and Alt frameworks.
 
 0.01 2014-12-13
   - original version

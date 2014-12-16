@@ -1,10 +1,10 @@
 {
-   "abstract" : "Generate a list of all primes less than or equal",
+   "abstract" : "Alternate Math::Prime::FastSieve using Inline::Module",
    "author" : [
       "David Oswald <davido [@at] cpan [d.o.t] org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 7.04, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "artistic_1"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Math-Prime-FastSieve",
+   "name" : "Alt-Math-Prime-FastSieve-Inline",
    "no_index" : {
       "directory" : [
          "t",
@@ -22,32 +22,27 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "English" : "0",
-            "ExtUtils::MakeMaker" : "6.63",
-            "Test::More" : "0.98"
+            "ExtUtils::MakeMaker" : "7.04",
+            "Test::More" : "1.001009"
          }
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.63",
-            "Inline::MakeMaker" : "0.51"
+            "ExtUtils::MakeMaker" : "7.04"
          }
       },
       "runtime" : {
          "requires" : {
-            "Inline" : "0.51",
-            "Inline::C" : "0.51",
-            "Inline::CPP" : "0.42",
-            "perl" : "5.006000"
+            "perl" : "5.008001"
          }
       }
    },
    "provides" : {
-      "Math::Prime::FastSieve" : {
-         "file" : "lib/Math/Prime/FastSieve.pm",
-         "version" : "0.18"
+      "Alt::Math::Prime::FastSieve::Inline" : {
+         "file" : "lib/Alt/Math/Prime/FastSieve/Inline.pm",
+         "version" : "0.01"
       }
    },
    "release_status" : "stable",
-   "version" : "0.18"
+   "version" : "0.02"
 }

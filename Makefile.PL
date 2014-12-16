@@ -21,13 +21,18 @@ WriteMakefile(
     BUILD_REQUIRES => {
         'ExtUtils::MakeMaker' => '7.04',
         'Test::More'          => '1.001009',
-        'English'             => '0',
-        'Inline::CPP' => '0.68',
-        'Inline'      => '0.78',
-        'Inline::C'   => '0.67',
-        'Inline::Module' => '0.18',
     },
     META_MERGE => {
+        prereqs => {
+            develop => {
+                requires => {
+                    'Inline::CPP'    => '0.69',
+                    'Inline'         => '0.78',
+                    'Inline::C'      => '0.67',
+                    'Inline::Module' => '0.21',
+                 },
+            },
+        },
         provides => {
             'Alt::Math::Prime::FastSieve::Inline' => {
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',

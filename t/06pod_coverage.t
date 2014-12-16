@@ -4,7 +4,6 @@ use warnings;
 
 use Test::More;
 
-ok(1);
 
 if ( $ENV{RELEASE_TESTING} ) {
     eval 'use Test::Pod::Coverage 1.00';    ## no critic (eval)
