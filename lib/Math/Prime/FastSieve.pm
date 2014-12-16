@@ -11,15 +11,9 @@ our @ISA = qw(Exporter);    ## no critic (isa)
 our @EXPORT_OK = qw( primes );    # We can export primes().
 our @EXPORT    = qw(        );    # Export nothing by default.
 
-# our $VERSION = '0.19';
+our $VERSION = '0.02';
 
-use Math::Prime::FastSieve::Inline
-    CPP     => 'DATA',
-    # clean_after_build => 0,
-    ;
-#    VERSION => '0.18',
-#    NAME    => 'Math::Prime::FastSieve';
-
+use Math::Prime::FastSieve::Inline CPP => 'DATA';
 
 # No real code here.  Everything is implemented in pure C++ using
 # Inline::CPP.
@@ -47,10 +41,13 @@ to C<$n>. Do it quickly.
 While we're at it, supply a few additional tools that a Prime Sieve
 facilitates.
 
+This is an "Alt::" distribution that stands in place of the original.
+
 =head1 VERSION
 
-Version 0.19
+Version 0.02
 
+Based on Math::Prime::FastSieve v0.18.
 
 =head1 DESCRIPTION
 
