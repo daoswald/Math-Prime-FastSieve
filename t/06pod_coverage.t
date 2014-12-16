@@ -4,6 +4,8 @@ use warnings;
 
 use Test::More;
 
+ok(1);
+
 if ( $ENV{RELEASE_TESTING} ) {
     eval 'use Test::Pod::Coverage 1.00';    ## no critic (eval)
     if ($@) {
@@ -18,5 +20,6 @@ else {
       . 'environment variable RELEASE_TESTING is set.';
 }
 
-all_pod_coverage_ok();
+pod_coverage_ok( 'Math::Prime::FastSieve' );
+done_testing();
 
