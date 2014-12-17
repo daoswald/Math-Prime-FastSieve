@@ -22,16 +22,16 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => '7.04',
         'Test::More'          => '1.001009',
     },
-    META_MERGE => {
+    META_MERGE   => {
         'meta-spec' => { version => 2 },
-        prereqs => {
+        prereqs     => {
             develop => {
                 requires => {
                     'Inline::CPP'    => '0.69',
                     'Inline'         => '0.78',
                     'Inline::C'      => '0.67',
                     'Inline::Module' => '0.21',
-                 },
+                },
             },
         },
         provides => {
