@@ -23,6 +23,7 @@ WriteMakefile(
         'Test::More'          => '1.001009',
     },
     META_MERGE => {
+        'meta-spec' => { version => 2 },
         prereqs => {
             develop => {
                 requires => {
@@ -36,7 +37,7 @@ WriteMakefile(
         provides => {
             'Alt::Math::Prime::FastSieve::Inline' => {
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
-                version => '0.01',
+                version => '0.04',
             },
         },
     },
