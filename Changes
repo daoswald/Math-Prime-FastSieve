@@ -1,5 +1,8 @@
 Revision history for Perl extension Alt::Math::Prime::FastSieve::Inline.
 
+0.04 2014-12-17
+  - Add a meta-spec field.
+  
 0.03 2014-12-16
   - Release with fixed Inline::Module
 
