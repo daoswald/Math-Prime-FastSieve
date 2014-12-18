@@ -30,14 +30,14 @@ WriteMakefile(
                     'Inline::CPP'    => '0.69',
                     'Inline'         => '0.78',
                     'Inline::C'      => '0.67',
-                    'Inline::Module' => '0.21',
+                    'Inline::Module' => '0.25',
                 },
             },
         },
         provides => {
             'Alt::Math::Prime::FastSieve::Inline' => {
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
-                version => '0.04',
+                version => '0.05',
             },
         },
     },
