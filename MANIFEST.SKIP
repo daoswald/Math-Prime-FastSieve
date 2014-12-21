@@ -1,0 +1,8 @@
+.git/
+.travis.yml$
+_build/
+Build
+Makefile$
+MANIFEST.SKIP$
+MANIFEST.bak$
+MYMETA

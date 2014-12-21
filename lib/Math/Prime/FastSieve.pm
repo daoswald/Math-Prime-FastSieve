@@ -11,7 +11,7 @@ our @ISA = qw(Exporter);    ## no critic (isa)
 our @EXPORT_OK = qw( primes );    # We can export primes().
 our @EXPORT    = qw(        );    # Export nothing by default.
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Math::Prime::FastSieve::Inline CPP => 'DATA';
 

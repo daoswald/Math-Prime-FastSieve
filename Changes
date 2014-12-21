@@ -1,5 +1,8 @@
 Revision history for Perl extension Alt::Math::Prime::FastSieve::Inline.
 
+0.06 2014-12-20
+  - Add MANIFEST.SKIP file
+
 0.05 2014-12-18
   - Release with newer Inline::Module
 

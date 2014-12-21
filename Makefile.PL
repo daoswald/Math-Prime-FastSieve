@@ -1,6 +1,5 @@
 ## no critic(RCS,VERSION,interpolation)
-use strict;
-use warnings;
+use 5.008001; use strict; use warnings; use utf8;
 
 use lib 'inc';
 use ExtUtils::MakeMaker;
@@ -28,16 +27,14 @@ WriteMakefile(
             develop => {
                 requires => {
                     'Inline::CPP'    => '0.69',
-                    'Inline'         => '0.78',
-                    'Inline::C'      => '0.67',
-                    'Inline::Module' => '0.25',
+                    'Inline::Module' => '0.27',
                 },
             },
         },
         provides => {
             'Alt::Math::Prime::FastSieve::Inline' => {
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
-                version => '0.05',
+                version => '0.06',
             },
         },
     },
@@ -49,4 +46,3 @@ WriteMakefile(
         },
     },
 );
-
