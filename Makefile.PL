@@ -34,7 +34,7 @@ WriteMakefile(
         provides => {
             'Alt::Math::Prime::FastSieve::Inline' => {
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
-                version => '0.06',
+                version => '0.07',
             },
         },
     },

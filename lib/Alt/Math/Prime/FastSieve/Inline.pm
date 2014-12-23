@@ -1,9 +1,6 @@
-## no critic('RequireFilenameMatchesPackage')
-package Math::Prime::FastSieve;
-use strict;
-use warnings;
-
-our $VERSION = '0.06';
+use 5.008001; use strict; use warnings;
+package Alt::Math::Prime::FastSieve::Inline;
+our $VERSION = '0.07';
 
 =head1 NAME
 
