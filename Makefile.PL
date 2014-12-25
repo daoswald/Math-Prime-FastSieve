@@ -12,6 +12,14 @@ WriteMakefile(
     AUTHOR           => 'David Oswald <davido [@at] cpan [d.o.t] org>',
     LICENSE          => 'artistic',
     MIN_PERL_VERSION => '5.008001',
+    postamble => {
+        inline => {
+            module   => 'Math::Prime::FastSieve',
+            stub     => 'Math::Prime::FastSieve::Inline',
+            ilsm     => 'Inline::CPP',
+            makestub => 1,
+        },
+    },
     PREREQ_PM        => {
     },
     CONFIGURE_REQUIRES => {
@@ -27,7 +35,7 @@ WriteMakefile(
             develop => {
                 requires => {
                     'Inline::CPP'    => '0.69',
-                    'Inline::Module' => '0.27',
+                    'Inline::Module' => '0.30',
                 },
             },
         },
@@ -36,13 +44,6 @@ WriteMakefile(
                 file    => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
                 version => '0.07',
             },
-        },
-    },
-    postamble => {
-        inline => {
-            module => 'Math::Prime::FastSieve',
-            stub   => 'Math::Prime::FastSieve::Inline',
-            ilsm   => 'Inline::CPP',
         },
     },
 );
