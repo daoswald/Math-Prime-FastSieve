@@ -1,5 +1,8 @@
 Revision history for Perl extension Alt::Math::Prime::FastSieve::Inline.
 
+0.09 2014-12-29
+  - Update to latest Alt best practices
+
 0.08 2014-12-24
   - Build in .inline/
 

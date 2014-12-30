@@ -1,6 +1,6 @@
 use 5.008001; use strict; use warnings;
 package Alt::Math::Prime::FastSieve::Inline;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 =head1 NAME
 

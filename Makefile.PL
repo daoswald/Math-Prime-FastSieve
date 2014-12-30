@@ -5,6 +5,7 @@ use lib 'inc';
 use ExtUtils::MakeMaker;
 use Inline::Module;
 
+my $alt = $ENV{PERL_ALT_INSTALL} || '';
 WriteMakefile(
     NAME             => 'Alt::Math::Prime::FastSieve::Inline',
     VERSION_FROM     => 'lib/Alt/Math/Prime/FastSieve/Inline.pm',
@@ -46,4 +47,5 @@ WriteMakefile(
             },
         },
     },
+    DESTDIR => $alt ? $alt eq 'OVERWRITE' ? '' : $alt : 'no-install-alt',
 );

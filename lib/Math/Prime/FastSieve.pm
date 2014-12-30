@@ -12,6 +12,7 @@ our @EXPORT_OK = qw( primes );    # We can export primes().
 our @EXPORT    = qw(        );    # Export nothing by default.
 
 # our $VERSION = 'x.xx';
+use Alt::Math::Prime::FastSieve::Inline;
 
 use Math::Prime::FastSieve::Inline CPP => 'DATA';
 
